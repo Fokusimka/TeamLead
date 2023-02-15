@@ -2,7 +2,7 @@
     "key": "my-app",
     "name": "My app",
     "description": "My very first app",
-    "baseUrl": "https://290f-109-120-21-110.ngrok.io",
+    "baseUrl": "https://f6cb-109-120-21-110.ngrok.io",
     "authentication": {
         "type": "jwt"
     },
@@ -21,7 +21,7 @@
                 "key": "hello-world-page-jira",
                 "location": "system.top.navigation.bar",
                 "name": {
-                    "value": "full"
+                    "value": "Full"
                 },
                 "url": "/hello-world",
                 "conditions": [{

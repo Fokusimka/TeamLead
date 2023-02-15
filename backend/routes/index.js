@@ -8,17 +8,22 @@ export default function routes(app, addon) {
     // This is an example route used by "generalPages" module (see atlassian-connect.json).
     // Verify that the incoming request is authenticated with Atlassian Connect.
     app.get('/hello-world', addon.authenticate(), (req, res) => {
-        // Rendering a template is easy; the render method takes two params: the name of the component or template file, and its props.
-        // Handlebars and jsx are both supported, but please note that jsx changes require `npm run watch-jsx` in order to be picked up by the server.
-        res.render(
-          'hello-world.hbs', // change this to 'hello-world.jsx' to use the Atlaskit & React version
-          {
-            title: 'Atlassian Connect'
-            //, issueId: req.query['issueId']
-            //, browserOnly: true // you can set this to disable server-side rendering for react views
-          }
-        );
+
+      var httpClient = addon.httpClient(req);
+      
+      httpClient.get('https://teamleadtodolist.atlassian.net/rest/api/3/search?jql=project%20%3D%20TT', function (err, resp, data) {
+        try {
+          res.render('hello-world.hbs', {
+            title: 'TodoList Tasks',
+            data: data,
+          });
+        } catch (e) {
+            console.log(e);
+            res.sendStatus(500);
+        }
+      })
     });
 
     // Add additional route handlers here...
 }
+

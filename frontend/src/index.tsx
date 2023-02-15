@@ -6,22 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store/store'
 
-// const root = ReactDOM.createRoot(
-//   document.getElementById('root') as HTMLElement
-// );
-
-export default function ExamplePage(Props: any) {
-  return (
-    <div>123 It's React text</div>
-  )
-}
-
 window.addEventListener('load', () => {
   const wrapper = document.getElementById('container');
+  // const wrapper = document.getElementById('root');
   ReactDOM.render(
     <Provider store={store}>
       <React.StrictMode>
-        {/* <ExamplePage /> */}
         <App />
       </React.StrictMode>
     </Provider>,

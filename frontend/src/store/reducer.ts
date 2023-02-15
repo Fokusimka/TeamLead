@@ -1,20 +1,16 @@
-const initialState = [
-    {
-        id: 0,
-        title: 'Задача 1',
-        info: 'Это описание задачи. Здесь указано как и что нужно сделать'
-    },
-    {
-        id: 1,
-        title: 'Задача 2',
-        info: 'Это описание задачи. Здесь указано как и что нужно сделать'
-    },
-]
+
+const initialState: any = []
 
 export default function reducer(state = initialState, action: any) {
+    console.log(state, ' <<<STATE on REDUCE')
+    let newArray
     switch(action.type) {
         case 'TASK_REMOVE':
-            return state.filter((task: any) => action.payload.id !== task.id)
+            newArray = state.data.filter((task: any) => action.payload.id !== task.id)
+            return {data: newArray}
+        case 'TASK_ADD':
+            newArray = state.concat(action.payload)
+            return {data: newArray}
         default: 
         return state
     }

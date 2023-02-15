@@ -49,6 +49,11 @@
             "dialect": "sqlite3",
             "logging": false,
             "type": "memory"
+        },
+        "restApiUrl": "ApiUrl",
+        "externalApp": {
+            "username": "user",
+            "token": "myToken"
         }
     },
     // Configuration for production, which is enabled by setting
