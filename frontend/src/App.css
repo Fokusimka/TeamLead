@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(252, 191, 191);
+  gap: 10px;
+}
