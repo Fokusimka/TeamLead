@@ -14,7 +14,6 @@ export default function routes(app, addon) {
       httpClient.get('https://teamleadtodolist.atlassian.net/rest/api/3/search?jql=project%20%3D%20TT', function (err, resp, data) {
         try {
           res.render('hello-world.hbs', {
-            title: 'TodoList Tasks',
             data: data,
           });
         } catch (e) {
