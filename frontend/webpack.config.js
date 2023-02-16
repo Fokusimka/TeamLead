@@ -1,4 +1,5 @@
 var path = require('path');
+const webpack = require('webpack')
 
 
 module.exports = {
@@ -31,5 +32,10 @@ module.exports = {
     output: {
         filename: 'bundled.[name].js',
         path: path.resolve("../backend/public/dist")
-    }
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      }),
+    ]
 };

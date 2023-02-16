@@ -13,3 +13,13 @@ export const setChecked = (id: number) => ({
   type: 'TASK_CHECK',
   payload: { id }
 })
+
+export const addProject = (newProject: any) => ({
+  type: 'PROJECT_ADD',
+  payload: newProject
+})
+
+export const changeProject = (project: any) => ({
+  type: 'PROJECT_CHANGE',
+  payload: project
+})
